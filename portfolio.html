@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url('img/space.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Keeps the background stationary */
+            z-index: -1; 
+            color: white;
+            font-family:sans-serif;
+            padding: 0%;
+            margin: 0%;
+        }
+
+        section {
+            display: grid;
+            place-items: center;
+            align-content: center;
+            min-height: 100vh;
+        }
+        .gogo {
+            opacity: 0;
+            filter: blur(5px);
+            transform: translateX(-100%);
+            transition: all 1.5s;
+        }
+        .show {
+            opacity: 1;
+            filter: blur(0);
+            transform: translateX(0);
+        }
+        .grp {
+            display: flex;
+        }
+        .block {
+            background-color: black;
+            border-radius: 10px;
+            min-height: 100px;
+            min-width: 150px;
+            text-align: center;
+            margin: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .block:nth-child(2) {
+            transition-delay: 0.2s;
+        }
+        .block:nth-child(3) {
+            transition-delay: 0.6s;
+        }
+        .block:nth-child(4) {
+            transition-delay: 1s; 
+        }
+        .yoyo {
+            width: 100%;
+            min-height: 100vh;
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #floating {
+            width: 200px;
+            height: 200px;       
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: piaopiao 3s ease-in-out infinite;
+            margin-bottom: 30px;
+        }
+
+        @keyframes piaopiao {
+            from {
+                transform: translate(0px,0px);
+            }
+            50% {
+                transform: translate(0px,35px);
+            }
+            to {
+                transform: translate(0px,0px);
+            }
+        }
+
+        #planet,#planet2, #planet3,#planet4,#planet5, #spaceship {
+            z-index: -1;
+            max-width: 200px;
+            max-height: 200px;
+            animation-duration: 20s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            position: fixed;
+            top: 600px;
+            left: -200px;
+            opacity: 0.7;
+        }
+
+        #planet {
+            animation-name: float;
+            animation-delay: 0s;
+        }
+        #planet2 {
+            animation-name: float;
+            animation-delay: -4s;
+        }
+        #planet3 {
+            animation-name: float;
+            animation-delay: -8s;
+        }
+        #planet4 {
+            animation-name: float;
+            animation-delay: -12s;
+        }
+        #planet5 {
+            animation-name: float;
+            animation-delay: -16s;
+        }
+
+        #spaceship {
+            animation-name: float;
+            animation-delay: 2s;
+        }
+
+        @keyframes float {
+            from {
+                transform: rotateZ(0) translate(0, 0);
+            }
+            to {
+                transform: rotateZ(100deg) translate(0px, -2000px);
+            }
+        }
+
+        #hat, #apu , .logo{
+            max-width: 150px;
+            max-height: 150px;
+        }
+        
+        h1 {
+            font-size: 40px;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: white;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        .icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <img src="img/earth.png" alt="" id="planet" >
+    <img src="img/uranus.png" alt="" id="planet2" >
+    <img src="img/mercury.png" alt="" id="planet3" >
+    <img src="img/planet.png" alt="" id="planet4" >
+    <img src="img/neptune.png" alt="" id="planet5" >
+    <section class="gogo">
+        <h2>WELCOME TO MY PORTFOLIO</h2>
+        <img src="img/hat.png" alt="" id="hat" > 
+        <h1>Ho Shuet Juin</h1>
+        <p style="font-size: 30px;">Software Engineer · Front End Developer</p>
+    </section>
+
+    <section class="yoyo">
+        <h1>My Education</h1>
+        <img src="img/apu.png" alt="" id="apu" > 
+        <p>I am currently a second-year student at Asia Pacific University of Technology & Innovation</p>
+        <p> Enroll in a Bachelor of Science (Hons) in Software Engineering</p>
+    </section>
+
+    <section class="gogo">
+        <h1>Job Experience</h1>
+        <b><p>Intern as Quality Assurance & IT Support Specialist </p></b>
+        <p>Blue Ocean IT SDN BHD</p>
+        <p>July 2023 to September 2023</p>
+    </section>
+
+    <section>
+        <h2>My Skills</h2>
+        <div class="grp">
+            <div class="block gogo">
+                <img src="img/html.png" alt="" class="logo" > 
+                <h3>HTML</h3>
+            </div>
+            <div class="block gogo">
+                <img src="img/css.png" alt="" class="logo" > 
+                <h3>CSS</h3>
+            </div>
+            <div class="block gogo">
+                <img src="img/php.png" alt="" class="logo" >  
+                <h3>PHP</h3>
+            </div>
+            <div class="block gogo">
+                <img src="img/javascript.png" alt="" class="logo" >  
+                <h3>JavaScript</h3>
+            </div>
+        </div>
+        <div class="grp">
+            <div class="block gogo">
+                <img src="img/python.png" alt="" class="logo" >  
+                <h3>Python</h3>
+            </div>
+            <div class="block gogo">
+                <img src="img/java.png" alt="" class="logo" >  
+                <h3>Java</h3>
+            </div>
+            <div class="block gogo">
+                <img src="img/sql.png" alt="" class="logo" >  
+                <h3>Database SQL</h3>
+            </div>
+            <div class="block gogo">
+                <img src="img/nodejs.png" alt="" class="logo" >  
+                <h3>Node.js Basics</h3>
+            </div>
+        </div>
+        <div class="grp">
+            <div class="block gogo">
+                <img src="img/web.png" alt="" class="logo" >  
+                <h3>Web Design</h3>
+            </div>
+            <div class="block gogo">
+                <img src="img/react.png" alt="" class="logo" >  
+                <h3>React.js Basics</h3>
+            </div>
+            <div class="block gogo">
+                <img src="img/express.png" alt="" class="logo" >  
+                <h3>Express.js Basics</h3>
+            </div>
+            <div class="block gogo">
+                <img src="img/pug.png" alt="" class="logo" >  
+                <h3>PUG</h3>
+            </div>
+        </div>
+        
+    </section>
+    
+
+    <section>
+        <h2>Connect With Me!</h2>
+        <div class="grp">
+
+            <div class="block gogo">
+                <a href="https://www.linkedin.com/in/ho-shuet-juin-2768792a5/" class="button">
+                    <img src="img/linkedin.png" alt="Icon" class="icon">
+                    linkedin
+                </a>
+            </div>
+            <div class="block gogo">
+                <a href="img/mycv.pdf" class="button">
+                    <img src="img/cvlogo.png" alt="Icon" class="icon">
+                    Resume
+                </a>
+            </div>
+
+        </div>
+</body>
+<script defer>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            console.log(entry)
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+            } else {
+                entry.target.classList.remove('show');
+            }
+        });
+    });
+    const theElement = document.querySelectorAll('.gogo');
+    theElement.forEach((el) => observer.observe(el));
+</script>
+</html>
+
+
